@@ -10,6 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import com.veldic.ingyeogg.models.MatchDto
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity() {
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe({
-                                        adapter.matches.toMutableList().add(it)
+                                        adapter.matches.add(it)
+                                        Log.d("MATCH", "got match info!" + adapter.matches.size)
                                         adapter.notifyDataSetChanged()
                                     },
                                         {

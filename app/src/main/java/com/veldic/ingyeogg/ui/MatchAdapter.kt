@@ -10,7 +10,7 @@ import com.veldic.ingyeogg.ui.viewholder.WinMatchViewHolder
 
 class MatchAdapter(private val viewModel: MainViewModel) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var matches: List<MatchDto> = emptyList()
+    var matches: MutableList<MatchDto> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = 
         when(viewType) {
@@ -36,6 +36,9 @@ class MatchAdapter(private val viewModel: MainViewModel) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder) {
             is WinMatchViewHolder -> {
+                holder.render(matches[position], viewModel.summoner)
+            }
+            is LoseMatchViewHolder -> {
                 holder.render(matches[position], viewModel.summoner)
             }
         }

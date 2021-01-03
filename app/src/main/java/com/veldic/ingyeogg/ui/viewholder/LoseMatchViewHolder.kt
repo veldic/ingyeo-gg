@@ -5,7 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.veldic.ingyeogg.models.MatchDto
 import com.veldic.ingyeogg.models.SummonerDto
-import kotlinx.android.synthetic.main.item_match_win.view.*
+import kotlinx.android.synthetic.main.item_match_lose.view.*
 
 class LoseMatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val championText : TextView = view.champion_text
