@@ -2,7 +2,9 @@ package com.veldic.ingyeogg.di
 
 import com.squareup.moshi.Moshi
 import com.veldic.ingyeogg.BuildConfig
+import com.veldic.ingyeogg.network.service.MatchService
 import com.veldic.ingyeogg.network.service.SummonerService
+import com.veldic.ingyeogg.network.service.retrofit.MatchRetrofitService
 import com.veldic.ingyeogg.network.service.retrofit.SummonerRetrofitService
 import dagger.Module
 import dagger.Provides
