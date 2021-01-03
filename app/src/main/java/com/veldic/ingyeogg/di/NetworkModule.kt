@@ -65,4 +65,10 @@ class NetworkModule {
         return SummonerService(retrofit.create(SummonerRetrofitService::class.java))
     }
 
+    @Provides
+    @Singleton
+    fun provideMatchService(retrofit: Retrofit): MatchService {
+        return MatchService(retrofit.create(MatchRetrofitService::class.java))
+    }
+
 }
