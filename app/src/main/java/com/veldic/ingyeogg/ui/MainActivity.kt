@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                                     .observeOn(AndroidSchedulers.mainThread())
                                     .subscribe({
                                         adapter.matches.add(it)
+                                        adapter.matches.sortByDescending{ it.gameId }
                                         Log.d("MATCH", "got match info!" + adapter.matches.size)
                                         adapter.notifyDataSetChanged()
                                     },

@@ -13,6 +13,7 @@ interface MatchRetrofitService {
     @GET("/lol/match/v4/matchlists/by-account/{encryptedAccountId}")
     fun getMatchesByAccount(
         @Path("encryptedAccountId") accountId: String,
+        @Query("beginIndex") beginIndex: Int = 0,
         @Query("endIndex") endIndex: Int = 10
     ): Single<MatchlistDto>
 
